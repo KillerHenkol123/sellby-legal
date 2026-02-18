@@ -12,18 +12,14 @@
       --card:#0a0a0a;
       --text:#ffffff;
       --muted:#8c8c8c;
-      --line:rgba(57,255,20,.15);
       --accent:#39FF14;
-      --accent2:#39FF14;
       --radius:18px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(57,255,20,.15), transparent 60%),
-                  radial-gradient(900px 500px at 100% 10%, rgba(57,255,20,.10), transparent 55%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
       color:var(--text);
     }
     a{color:inherit}
@@ -52,12 +48,11 @@
     }
     @media (max-width:860px){ .hero{grid-template-columns:1fr} }
     .card{
-      background: rgba(10,10,10,.85);
+      background: rgba(10,10,10,.95);
       border: 1px solid rgba(57,255,20,.15);
       border-radius: var(--radius);
       padding: 22px;
       box-shadow: 0 18px 55px rgba(0,0,0,.6);
-      backdrop-filter: blur(10px);
     }
     h1{margin:0 0 10px;font-size:40px;line-height:1.08}
     @media (max-width:560px){ h1{font-size:34px} }
@@ -75,9 +70,6 @@
       color:#000;
       border-color: transparent;
       box-shadow: 0 0 25px rgba(57,255,20,.5);
-    }
-    .mini{
-      margin-top:10px;color:var(--muted);font-size:13px;line-height:1.45
     }
     .grid{
       display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px
@@ -103,18 +95,16 @@
   <div class="wrap">
     <header class="top">
       <a class="brand" href="/" aria-label="SellBy home">
-        <img src="/logo.png" alt="SellBy logo">
+        <img src="/logo.jpg" alt="SellBy logo">
         <span>SellBy</span>
       </a>
       <nav class="nav" aria-label="Site links">
-        <a href="#about">About</a>
-        <a href="#security">Security</a>
         <a href="/privacy/">Privacy Policy</a>
         <a href="/terms/">Terms</a>
       </nav>
     </header>
 
-    <section class="hero" id="about">
+    <section class="hero">
       <div class="card">
         <div class="pill">Multi-marketplace listing workflow • seller productivity</div>
         <h1>List smarter across marketplaces.</h1>
@@ -124,13 +114,8 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:support@sellby.eu?subject=SellBy%20Access%20Request">Request access</a>
-          <a class="btn" href="mailto:support@sellby.eu?subject=SellBy%20Support">Contact support</a>
+          <a class="btn btnPrimary" href="mailto:support@sellby.eu">Contact support</a>
         </div>
-
-        <p class="mini">
-          For platform reviewers: users connect their marketplace accounts via OAuth and SellBy acts only on behalf of the authorized shop owner.
-        </p>
 
         <div class="grid">
           <div class="feat">
@@ -148,17 +133,7 @@
         </div>
       </div>
 
-      <aside class="card right" id="security">
-        <h2>Security & compliance</h2>
-        <ul class="list">
-          <li>OAuth sign-in for connected marketplaces (seller permission required).</li>
-          <li>SellBy uses only data explicitly authorized by the user.</li>
-          <li>No scraping of marketplace content as part of the integration flow.</li>
-          <li>No selling of user data.</li>
-        </ul>
-
-        <div class="hr"></div>
-
+      <aside class="card right">
         <h2>Contact</h2>
         <p class="lead" style="margin:0;color:var(--muted);font-size:14.5px">
           Email: <a class="mono" href="mailto:support@sellby.eu">support@sellby.eu</a><br />
