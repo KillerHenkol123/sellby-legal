@@ -46,10 +46,6 @@ canvas#particles{
   padding:10px 0 22px;
 }
 
-.brand{
-  display:flex;align-items:center;text-decoration:none;
-}
-
 .brand img{
   height:42px;
   border-radius:22%;
@@ -98,14 +94,31 @@ h1{
   line-height:1.6;
 }
 
+.ctaRow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
 .btn{
   display:inline-flex;
   padding:12px 18px;
   border-radius:14px;
   font-weight:700;
+  text-decoration:none;
+}
+
+.btnPrimary{
   background:var(--accent);
   color:#000;
   box-shadow:0 0 25px rgba(57,255,20,.6);
+}
+
+.btnSecondary{
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
 }
 
 .grid{
@@ -138,7 +151,7 @@ h1{
 
 <header class="top">
   <a class="brand" href="/">
-    <img src="/logo.jpg" alt="SellBy logo">
+    <img src="/logo.png" alt="SellBy logo">
   </a>
   <nav class="nav">
     <a href="/privacy/">Privacy Policy</a>
@@ -155,7 +168,11 @@ h1{
       and discover better deals — all in one place.
     </p>
 
-    <a class="btn" href="mailto:support@sellby.eu">Contact support</a>
+    <div class="ctaRow">
+      <!-- Replace # with App Store link when ready -->
+      <a class="btn btnPrimary" href="#">Get access</a>
+      <a class="btn btnSecondary" href="mailto:support@sellby.eu">Contact support</a>
+    </div>
 
     <div class="grid">
       <div class="feat">
