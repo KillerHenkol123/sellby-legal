@@ -1,199 +1,150 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SellBy — Listing Manager for Multi-Marketplace Sellers</title>
-  <meta name="description" content="SellBy helps sellers organize, edit, and optimize product listings before publishing them to connected marketplaces." />
-  <meta name="robots" content="index,follow" />
-  <style>
-    :root{
-      --bg:#0b1020;
-      --card:#0f1733;
-      --text:#e9ecff;
-      --muted:#b8c0ffcc;
-      --line:#253060;
-      --accent:#1F4FD8;
-      --accent2:#7aa2ff;
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(31,79,216,.35), transparent 60%),
-                  radial-gradient(900px 500px at 100% 10%, rgba(122,162,255,.25), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
-    .top{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:10px 0 22px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;text-decoration:none;
-    }
-    .logo{
-      width:42px;height:42px;border-radius:12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 12px 30px rgba(31,79,216,.25);
-    }
-    .brand span{font-weight:800;letter-spacing:.2px}
-    .nav{display:flex;gap:12px;flex-wrap:wrap}
-    .nav a{
-      text-decoration:none;
-      padding:8px 12px;border:1px solid rgba(255,255,255,.12);
-      border-radius:999px;color:var(--muted);
-      background: rgba(255,255,255,.04);
-    }
-    .hero{
-      display:grid;grid-template-columns: 1.2fr .8fr;gap:18px;align-items:stretch;
-      margin-top:10px;
-    }
-    @media (max-width:860px){ .hero{grid-template-columns:1fr} }
-    .card{
-      background: rgba(15,23,51,.78);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 18px 55px rgba(0,0,0,.35);
-      backdrop-filter: blur(10px);
-    }
-    h1{margin:0 0 10px;font-size:40px;line-height:1.08}
-    @media (max-width:560px){ h1{font-size:34px} }
-    .lead{margin:0 0 18px;color:var(--muted);font-size:16.5px;line-height:1.55}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 14px;border-radius:14px;text-decoration:none;font-weight:700;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-    }
-    .btnPrimary{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-color: rgba(0,0,0,.0);
-      box-shadow: 0 14px 40px rgba(31,79,216,.25);
-    }
-    .mini{
-      margin-top:10px;color:var(--muted);font-size:13px;line-height:1.45
-    }
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px
-    }
-    @media (max-width:860px){ .grid{grid-template-columns:1fr} }
-    .feat h3{margin:0 0 8px;font-size:16px}
-    .feat p{margin:0;color:var(--muted);line-height:1.5;font-size:14.5px}
-    .pill{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:7px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color:var(--muted);font-size:13px
-    }
-    .right h2{margin:0 0 10px;font-size:18px}
-    .list{margin:0;padding-left:18px;color:var(--muted);line-height:1.6}
-    .hr{height:1px;background:rgba(255,255,255,.10);margin:18px 0}
-    .footer{
-      margin-top:22px;color:var(--muted);font-size:13px;display:flex;gap:10px;flex-wrap:wrap;
-      justify-content:space-between;align-items:center
-    }
-    .footer a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.22)}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SellBy — Multi-Marketplace Listing Manager</title>
+<meta name="description" content="SellBy helps sellers organize and optimize listings before publishing to connected marketplaces." />
+
+<style>
+:root{
+  --bg:#000000;
+  --green:#39FF14;
+  --green-soft:#1a3f1a;
+  --text:#ffffff;
+  --muted:#a0a0a0;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 80px;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:60px;
+}
+
+.logo{
+  height:44px;
+}
+
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--green);
+}
+
+.hero h1{
+  font-size:48px;
+  margin:0 0 20px;
+  line-height:1.1;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:600px;
+  margin-bottom:30px;
+}
+
+.button{
+  display:inline-block;
+  padding:16px 28px;
+  border-radius:40px;
+  background:var(--green);
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(57,255,20,0.4);
+  transition:0.2s ease;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 40px rgba(57,255,20,0.7);
+}
+
+.section{
+  margin-top:80px;
+}
+
+.section h2{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.section p{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.6;
+}
+
+.card{
+  border:1px solid rgba(57,255,20,0.25);
+  background:rgba(57,255,20,0.05);
+  padding:20px;
+  border-radius:18px;
+  margin-top:20px;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="top">
-      <a class="brand" href="/" aria-label="SellBy home">
-        <div class="logo" aria-hidden="true"></div>
-        <span>SellBy</span>
-      </a>
-      <nav class="nav" aria-label="Site links">
-        <a href="#about">About</a>
-        <a href="#security">Security</a>
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms</a>
-      </nav>
-    </header>
 
-    <section class="hero" id="about">
-      <div class="card">
-        <div class="pill">Multi-marketplace listing workflow • seller productivity</div>
-        <h1>List smarter across marketplaces.</h1>
-        <p class="lead">
-          SellBy is a seller productivity and listing management app that helps users organize, edit,
-          and optimize product listings before publishing them to connected marketplaces.
-        </p>
+<div class="container">
 
-        <div class="ctaRow">
-          <!-- If you have an App Store / TestFlight link, put it here -->
-          <a class="btn btnPrimary" href="mailto:support@sellby.eu?subject=SellBy%20Access%20Request">Request access</a>
-          <a class="btn" href="mailto:support@sellby.eu?subject=SellBy%20Support">Contact support</a>
-        </div>
+<header>
+  <img src="/logo.png" alt="SellBy logo" class="logo">
+  <nav>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </nav>
+</header>
 
-        <p class="mini">
-          For platform reviewers: users connect their marketplace accounts via OAuth and SellBy acts only on behalf of the authorized shop owner.
-        </p>
+<section class="hero">
+  <h1>List Smarter Across Marketplaces</h1>
+  <p>
+    SellBy is a seller productivity and listing management app that helps users organize,
+    edit, and optimize product listings before publishing them to connected marketplaces.
+  </p>
+  <a href="mailto:support@sellby.eu" class="button">Request Access</a>
+</section>
 
-        <div class="grid">
-          <div class="feat">
-            <h3>Organize</h3>
-            <p>Keep item details, photos, pricing, and variants structured in one place before posting.</p>
-          </div>
-          <div class="feat">
-            <h3>Optimize</h3>
-            <p>Improve titles and descriptions, standardize attributes, and reduce manual copy-paste.</p>
-          </div>
-          <div class="feat">
-            <h3>Manage</h3>
-            <p>Edit, update, or delist listings using authorized integrations where supported.</p>
-          </div>
-        </div>
-      </div>
-
-      <aside class="card right" id="security">
-        <h2>Security & compliance</h2>
-        <ul class="list">
-          <li>OAuth sign-in for connected marketplaces (seller permission required).</li>
-          <li>SellBy uses only data explicitly authorized by the user.</li>
-          <li>No scraping of marketplace content as part of the integration flow.</li>
-          <li>No selling of user data.</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h2>Contact</h2>
-        <p class="lead" style="margin:0;color:var(--muted);font-size:14.5px">
-          Email: <a class="mono" href="mailto:support@sellby.eu">support@sellby.eu</a><br />
-          Business: Lithuania
-        </p>
-
-        <div class="hr"></div>
-
-        <h2>Legal</h2>
-        <ul class="list">
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="/terms.html">Terms of Service</a></li>
-        </ul>
-      </aside>
-    </section>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> SellBy. All rights reserved.</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="mailto:support@sellby.eu">Support</a>
-      </div>
-    </footer>
+<section class="section">
+  <h2>What It Does</h2>
+  <div class="card">
+    Organize product details, optimize titles and descriptions,
+    manage pricing and inventory, and publish listings through authorized integrations.
   </div>
+</section>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<section class="section">
+  <h2>Security & Compliance</h2>
+  <p>
+    Sellers connect their marketplace accounts securely via OAuth.
+    SellBy only accesses data explicitly authorized by the shop owner
+    and operates in compliance with marketplace API policies.
+  </p>
+</section>
+
+</div>
+
 </body>
 </html>
